@@ -6,6 +6,7 @@
   * [ShadowDetection#Config Config] 
   * [ShadowDetection#Future Future] 
   * [ShadowDetection#Usage Usage]
+  * [ShadowDetection#Batch_file Batch file]
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0 
@@ -94,7 +95,7 @@ Makefile Usage:"
     * OpenCL executables are using openCL in processing, other not.
     * Set configuration file ( see [ShadowDetection#Config Config] )
     * Call executable
-      # If use batch with parameter which indicates batch processing file. Example:
+      # If use batch with parameter which indicates batch processing file (see [ShadowDetection#Batch_file Batch file] ). Example:
 {{{
 ./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection list.csv
 }}} 
@@ -102,8 +103,17 @@ Makefile Usage:"
 {{{
 ./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection 0.jpg out.jpg
 }}}
-    *Additional parameters -help and -list
+    *Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds 0list will list all platforms and devices
 
+= Batch file =
+Batch file is text file composed of lines. Each line has TAB separated values for input and output files. Example:
+{{{
+0.jpg	shadow01.jpg
+5.jpg	shadow51.jpg
+camel.jpg	shadowcamel1.jpg
+deca.png	shadowdeca1.jpg
+sh.jpg	shadowsh1.jpg
+}}}
 = Future =
 
 = Contact =
