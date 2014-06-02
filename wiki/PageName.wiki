@@ -1,0 +1,17 @@
+#summary Shadow Detection on images.
+= News =
+  * Version 0.1.0 
+    # Added OpenCL processing support
+    # Added batch processing
+    # Added configuration (see Config section)
+
+= Introduction =
+
+= Requirements =
+
+= Config =
+
+= Future =
+
+= Contact =
+
