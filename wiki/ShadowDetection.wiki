@@ -103,7 +103,14 @@ Makefile Usage:"
 {{{
 ./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection 0.jpg out.jpg
 }}}
-    *Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds 0list will list all platforms and devices
+    *Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds 0list will list all platforms and devices, example:
+{{{
+$ ./dist/DebugOpenCL/GNU+CUDA-Linux-x86/shadowdetection -list
+Found 1 platforms.
+Platform name: NVIDIA CUDA
+Found 1 devices
+Device 0 name: GeForce GT 630
+}}}
 
 = Batch file =
 Batch file is text file composed of lines. Each line has TAB separated values for input and output files. Example:
@@ -119,6 +126,7 @@ sh.jpg	shadowsh1.jpg
     * AMD graphic cards support
     * Complete switch to OpenCV C++ API
     * MacOSX support
+    * Use precompiled openCL kernels
   == Soon ==
     * 32bit releases
     * Improve accuracy with SVM and machine learning
