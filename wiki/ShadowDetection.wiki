@@ -1,20 +1,53 @@
 #summary Shadow detection on raster images.
 
 = Contents =
-  * [ShadowDetection#News]
+  * [ShadowDetection#News News]
+  * [ShadowDetection#Requirements Requirements]
+  * [ShadowDetection#Config Config] 
+  * [ShadowDetection#Future Future] 
+  * [ShadowDetection#Contact Contact] 
 
 = News =
   * Version 0.1.0 
-    # Added OpenCL processing support
-    # Added batch processing
-    # Added configuration (see Config section)
-
-= Introduction =
+    # Added OpenCL processing support (see [ShadowDetection#Requirements Requirements])
+    # Added batch processing (see [ShadowDetection#Config Config])
+    # Added configuration (see [ShadowDetection#Config Config])
 
 = Requirements =
+
+  == Supported operating systems ==
+     * Linux 64 bit
+
+  == Supported image formats ==
+     * jpeg
+     * tiff
+     * png
+
+  == Required libraries ==
+     * libjpeg and dev ( [http://libjpeg.sourceforge.net libjpeg] )
+     * libtiff and dev ( [http://www.libtiff.org/ libtiff] )
+     * libpng and dev  ( [http://www.libpng.org/pub/png/libpng.html libpng] )
+     * OpenCV 2.4.9 or above (if openCV is installed with different prefix than /usr/local then must set adequate include and lib paths)
+   
+     _Notice: Some libraries have them own requirements_
+
+  == OpenCL ==
+    === Supported hardware ===
+        * NVIDIA GeForce 600 series or above
+        * NVIDIA Tesla K series
+    
+        _Notice: May work on some other NVIDIA cards than specified but it is not tested_ 
+
+    === Required software ===
+        * Latest NVIDIA OpenCL capable drivers
+        * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
+        * OpenCV built with WITH_OPENCL turned ON
+          [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
 
 = Config =
 
 = Future =
 
 = Contact =
+  
+  Please contact to [markodjurovic@yahoo.com]
