@@ -115,7 +115,16 @@ deca.png	shadowdeca1.jpg
 sh.jpg	shadowsh1.jpg
 }}}
 = Future =
-
+  == Very soon ==    
+    * AMD graphic cards support
+    * Complete switch to OpenCV C++ API
+    * MacOSX support
+  == Soon ==
+    * 32bit releases
+    * Improve accuracy with SVM and machine learning
+  == Later ==
+    * Support to use AMD and Intel CPUs in openCL processing
+    * Windows and Visual Studio support
 = Contact =
   
-  For any questions, suggestions, etc. please contact markodjurovic@yahoo.com
+  For any questions, suggestions, issues notifications, etc. please contact markodjurovic@yahoo.com
