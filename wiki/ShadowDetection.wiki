@@ -5,46 +5,90 @@
   * [ShadowDetection#Requirements Requirements]
   * [ShadowDetection#Config Config] 
   * [ShadowDetection#Future Future] 
+  * [ShadowDetection#Usage Usage]
   * [ShadowDetection#Contact Contact] 
-
 = News =
   * Version 0.1.0 
     # Added OpenCL processing support (see [ShadowDetection#Requirements Requirements])
     # Added batch processing (see [ShadowDetection#Config Config])
     # Added configuration (see [ShadowDetection#Config Config])
-
 = Requirements =
-
   == Supported operating systems ==
      * Linux 64 bit
-
+  == Supported CPUs ==
+     *x86_64
   == Supported image formats ==
      * jpeg
      * tiff
      * png
-
   == Required libraries ==
      * libjpeg and dev ( [http://libjpeg.sourceforge.net libjpeg] )
      * libtiff and dev ( [http://www.libtiff.org/ libtiff] )
      * libpng and dev  ( [http://www.libpng.org/pub/png/libpng.html libpng] )
      * OpenCV 2.4.9 or above (if openCV is installed with different prefix than /usr/local then must set adequate include and lib paths)
-   
+     * make
+     * g++
      _Notice: Some libraries have them own requirements_
-
   == OpenCL ==
-    === Supported hardware ===
+    === Supported device hardware ===
         * NVIDIA GeForce 600 series or above
         * NVIDIA Tesla K series
-    
-        _Notice: May work on some other NVIDIA cards than specified but it is not tested_ 
-
+          _Notice: May work on some other NVIDIA cards than specified but it is not tested_          
+    === Supported host hardware ===
+        * Intel CPUs
+        * AMD CPUs
     === Required software ===
         * Latest NVIDIA OpenCL capable drivers
         * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
         * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
-
 = Config =
+Configuration file is: ShadowDetectionConfig.xml and looks like this:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<QsConfig>
+    <process>
+        <UseBatch>
+            true
+        </UseBatch>        
+    </process>
+    <settings>        
+        <openCL>            
+            <platformid>
+                0
+            </platformid>
+            <deviceid>
+                0
+            </deviceid>       
+        </openCL>        
+    </settings>
+</QsConfig>
+}}}
+
+"UseBatch" variable should have true/false value. 
+  * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
+  * If it is false then specify input image file and output file with extension
+
+"platformid" specifies platform index used in openCL processing
+
+"deviceid" specifies device index of selected platform used in openCL processing
+
+= Usage =
+  == Build ==
+    === NetBeans ===
+      This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
+    === Command line ===
+      make usage:
+{{{
+Makefile Usage:"
+	make [CONF=<CONFIGURATION>] [SUB=no] build"
+	make [CONF=<CONFIGURATION>] [SUB=no] clean"
+	make [SUB=no] clobber"
+	make [SUB=no] all"
+	make help"
+}}}
+      Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL.
+      If required dependecies are not insatlled at default locations, you got to set adequate lib and include dirs in make files.     
 
 = Future =
 
