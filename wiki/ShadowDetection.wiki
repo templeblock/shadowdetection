@@ -43,7 +43,7 @@
         * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
 = Config =
-Configuration file is: ShadowDetectionConfig.xml and looks like this:
+  Configuration file is: ShadowDetectionConfig.xml and looks like this:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
 <QsConfig>
@@ -65,20 +65,21 @@ Configuration file is: ShadowDetectionConfig.xml and looks like this:
 </QsConfig>
 }}}
 
-"UseBatch" variable should have true/false value. 
-  * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
-  * If it is false then specify input image file and output file with extension
+  "UseBatch" variable should have true/false value. 
+    * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
+    * If it is false then specify input image file and output file with extension
 
-"platformid" specifies platform index used in openCL processing
+  "platformid" specifies platform index used in openCL processing
 
-"deviceid" specifies device index of selected platform used in openCL processing
+  "deviceid" specifies device index of selected platform used in openCL processing
 
 = Usage =
   == Build ==
-    === NetBeans ===
+    === NetBeans IDE ===
       This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
     === Command line ===
-      make usage:
+      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL.
+        make usage:
 {{{
 Makefile Usage:"
 	make [CONF=<CONFIGURATION>] [SUB=no] build"
@@ -87,11 +88,24 @@ Makefile Usage:"
 	make [SUB=no] all"
 	make help"
 }}}
-      Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL.
-      If required dependecies are not insatlled at default locations, you got to set adequate lib and include dirs in make files.     
+     * If required dependecies are not insatlled at default locations, you got to set adequate lib and include dirs in make files.
+  == Use instructions ==
+    * After successful build you will have appropriate executables.
+    * OpenCL executables are using openCL in processing, other not.
+    * Set configuration file ( see [ShadowDetection#Config Config] )
+    * Call executable
+      # If use batch with parameter which indicates batch processing file. Example:
+{{{
+./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection list.csv
+}}} 
+      # If not using batch processing with input and output paramaters. Example:
+{{{
+./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection 0.jpg out.jpg
+}}}
+    *Additional parameters -help and -list
 
 = Future =
 
 = Contact =
   
-  Please contact to [markodjurovic@yahoo.com]
+  For any questions, suggestions, etc. please contact markodjurovic@yahoo.com
