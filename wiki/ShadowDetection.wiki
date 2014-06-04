@@ -143,6 +143,7 @@ sh.jpg	shadowsh1.jpg
   == Soon ==
     * 32bit releases
     * Improve accuracy with SVM and machine learning
+    * configure script
   == Later ==
     * Support to use ~~AMD~~ and Intel CPUs in openCL processing
     * Windows and Visual Studio support
