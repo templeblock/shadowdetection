@@ -10,9 +10,11 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0 
-    # Added OpenCL processing support (see [ShadowDetection#Requirements Requirements])
+    # Fixed issue with multiple OpenCL platforms installed (06/04/14)
+    # Added OpenCL support for AMD CPUs (06/04/14)
+    # Added OpenCL processing support (see [ShadowDetection#Requirements Requirements])    
     # Added batch processing (see [ShadowDetection#Config Config])
-    # Added configuration (see [ShadowDetection#Config Config])
+    # Added configuration (see [ShadowDetection#Config Config])    
 = Requirements =
   == Supported operating systems ==
      * Linux 64 bit
@@ -34,14 +36,18 @@
     === Supported device hardware ===
         * NVIDIA GeForce 600 series or above
         * NVIDIA Tesla K series
-          _Notice: May work on some other NVIDIA cards than specified but it is not tested_          
+        * AMD CPUs
+          _Notice: May work on some other NVIDIA cards than specified but it is not tested, also may work on Intel CPUs but not tested_          
     === Supported host hardware ===
         * Intel CPUs
         * AMD CPUs
     === Required software ===
+      ==== NVIDIA GPUs ====
         * Latest NVIDIA OpenCL capable drivers
         * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
-        * OpenCV built with WITH_OPENCL turned ON
+      ==== AMD CPUs ====
+        * AMD-APP-SDK-v2.9 (if SDK installed at different location than /opt/AMDAPP/ then must set adequate lib and include paths)
+      * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
 = Config =
   Configuration file is: ShadowDetectionConfig.xml and looks like this:
