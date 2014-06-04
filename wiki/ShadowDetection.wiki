@@ -85,7 +85,7 @@
     === NetBeans IDE ===
       This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
     === Command line ===
-      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL.
+      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD.
         make usage:
 {{{
 Makefile Usage:"
@@ -111,11 +111,18 @@ Makefile Usage:"
 }}}
     *Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds 0list will list all platforms and devices, example:
 {{{
-$ ./dist/DebugOpenCL/GNU+CUDA-Linux-x86/shadowdetection -list
-Found 1 platforms.
-Platform name: NVIDIA CUDA
+$ ./dist/ReleaseOpenCL_AMD/GNU-Linux-x86/shadowdetection -list
+Found 2 platforms.
+=============
+Platform name: AMD Accelerated Parallel Processing
 Found 1 devices
-Device 0 name: GeForce GT 630
+Device 0 name: AMD Athlon(tm) II X4 651 Quad-Core Processor
+=============
+Platform name: NVIDIA CUDA
+Error: clGetDeviceIDs(-1)
+Platform not supported by this build
+SHADOW_OTHER clGetDeviceIDs
+=============
 }}}
 
 = Batch file =
@@ -137,7 +144,7 @@ sh.jpg	shadowsh1.jpg
     * 32bit releases
     * Improve accuracy with SVM and machine learning
   == Later ==
-    * Support to use AMD and Intel CPUs in openCL processing
+    * Support to use ~~AMD~~ and Intel CPUs in openCL processing
     * Windows and Visual Studio support
 = Contact =
   
