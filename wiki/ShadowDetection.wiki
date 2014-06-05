@@ -144,7 +144,7 @@ sh.jpg	shadowsh1.jpg
     * AMD graphic cards support
     * Complete switch to OpenCV C++ API
     * MacOSX support
-    * Use precompiled openCL kernels
+    * ~~Use precompiled openCL kernels~~
   == Soon ==
     * 32bit releases
     * Improve accuracy with SVM and machine learning
