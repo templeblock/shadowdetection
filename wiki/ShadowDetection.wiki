@@ -60,7 +60,10 @@
         </UseBatch>        
     </process>
     <settings>        
-        <openCL>            
+        <openCL>
+            <UsePrecompiledKernels>
+                true
+            </UsePrecompiledKernels>             
             <platformid>
                 0
             </platformid>
@@ -79,6 +82,8 @@
   "platformid" specifies platform index used in openCL processing
 
   "deviceid" specifies device index of selected platform used in openCL processing
+
+  "UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
 
 = Usage =
   == Build ==
