@@ -9,7 +9,8 @@
   * [ShadowDetection#Batch_file Batch file]
   * [ShadowDetection#Contact Contact] 
 = News =
-  * Version 0.1.0 
+  * Version 0.1.0
+    # OpenCL processing switched to OpenCV2 (06/06/14)
     # Fixed issue with multiple OpenCL platforms installed (06/04/14)
     # Added OpenCL support for AMD CPUs (06/04/14)
     # Added OpenCL processing support (see [ShadowDetection#Requirements Requirements])    
@@ -142,7 +143,7 @@ sh.jpg	shadowsh1.jpg
 = Future =
   == Very soon ==    
     * AMD graphic cards support
-    * Complete switch to OpenCV C++ API
+    * ~~Complete switch to OpenCV C++ API~~
     * MacOSX support
     * ~~Use precompiled openCL kernels~~
   == Soon ==
