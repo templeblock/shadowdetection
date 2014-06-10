@@ -50,7 +50,7 @@
     === Supported host hardware ===
         * Intel CPUs
         * AMD CPUs
-        * On Macintosh all
+        * On Macintosh all CPUs
     === Required software ===
       ==== NVIDIA GPUs ====
         * Latest NVIDIA OpenCL capable drivers
