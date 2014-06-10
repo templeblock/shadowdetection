@@ -22,6 +22,8 @@
 = Requirements =
   == Supported operating systems ==
      * Linux 64 bit
+     * OS X Maverics
+       _Notice: May work on older OS X systems, but only tested on Maverics_
   == Supported CPUs ==
      * x86_64
   == Supported image formats ==
