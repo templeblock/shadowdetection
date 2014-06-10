@@ -10,6 +10,9 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0
+    # Fixed issue with save binary on Mac (06/08/14)
+    # Fixed load precompiled binary for AMD CPUs (06/07/14)
+    # Added support for MacOSX (06/07/14)
     # OpenCL processing switched to OpenCV2 (06/06/14)
     # Fixed issue with multiple OpenCL platforms installed (06/04/14)
     # Added OpenCL support for AMD CPUs (06/04/14)
@@ -25,6 +28,7 @@
      * jpeg
      * tiff
      * png
+     * bmp
   == Required libraries ==
      * libjpeg and dev ( [http://libjpeg.sourceforge.net libjpeg] )
      * libtiff and dev ( [http://www.libtiff.org/ libtiff] )
@@ -38,16 +42,20 @@
         * NVIDIA GeForce 600 series or above
         * NVIDIA Tesla K series
         * AMD CPUs
-          _Notice: May work on some other NVIDIA cards than specified but it is not tested, also may work on Intel CPUs but not tested_          
+          _Notice: May work on some other NVIDIA cards than specified but it is not tested, also may work on Intel CPUs but not tested_ 
+        * Macintosh platforms supported
     === Supported host hardware ===
         * Intel CPUs
         * AMD CPUs
+        * On Macintosh all
     === Required software ===
       ==== NVIDIA GPUs ====
         * Latest NVIDIA OpenCL capable drivers
         * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
       ==== AMD CPUs ====
         * AMD-APP-SDK-v2.9 (if SDK installed at different location than /opt/AMDAPP/ then must set adequate lib and include paths)
+      ==== Macintosh ====
+        * XCode command line tools
       * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
 = Config =
@@ -70,21 +78,26 @@
             </platformid>
             <deviceid>
                 0
-            </deviceid>       
+            </deviceid>
+            <mac>
+                <useGPU>false</useGPU>
+            </mac>        
         </openCL>        
     </settings>
 </QsConfig>
 }}}
 
-  "UseBatch" variable should have true/false value. 
+  "process.openCL.UseBatch" variable should have true/false value. 
     * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
     * If it is false then specify input image file and output file with extension
 
-  "platformid" specifies platform index used in openCL processing
+  "settings.openCL.platformid" specifies platform index used in openCL processing
 
-  "deviceid" specifies device index of selected platform used in openCL processing
+  "settings.openCL.deviceid" specifies device index of selected platform used in openCL processing
 
-  "UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
+  "settings.openCL.UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
+  
+  "settings.openCL.mac.useGPU" flag wich indicates what to use as device on MacOsX systems. If true GPU will be used, otherwise CPU will be used. On other systems than MacOsX flag value will be ignored.
 
 = Usage =
   == Build ==
@@ -144,7 +157,7 @@ sh.jpg	shadowsh1.jpg
   == Very soon ==    
     * AMD graphic cards support
     * ~~Complete switch to OpenCV C++ API~~
-    * MacOSX support
+    * ~~MacOSX support~~
     * ~~Use precompiled openCL kernels~~
   == Soon ==
     * 32bit releases
