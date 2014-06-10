@@ -35,6 +35,7 @@
      * libpng and dev  ( [http://www.libpng.org/pub/png/libpng.html libpng] )
      * OpenCV 2.4.9 or above (if openCV is installed with different prefix than /usr/local then must set adequate include and lib paths)
      * make
+     * gcc
      * g++
      _Notice: Some libraries have them own requirements_
   == OpenCL ==
