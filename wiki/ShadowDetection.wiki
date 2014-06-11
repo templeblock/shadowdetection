@@ -172,3 +172,5 @@ sh.jpg	shadowsh1.jpg
 = Contact =
   
   For any questions, suggestions, issues notifications, etc. please contact markodjurovic@yahoo.com
+
+<wiki:gadget url="http://www.ohloh.net/p/716824/widgets/project_thin_badge.xml" height="52" border="0"/>
