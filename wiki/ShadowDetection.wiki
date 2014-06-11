@@ -1,4 +1,4 @@
- #summary Shadow detection on raster images.
+#summary Shadow detection on raster images.
 
 = Contents =
   * [ShadowDetection#News News]
