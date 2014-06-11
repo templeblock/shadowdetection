@@ -107,7 +107,7 @@
     === NetBeans IDE ===
       This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
     === Command line ===
-      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD.
+      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD, DebugOpenCL_Mac, ReleaseOpenCL_Mac, Debug_Mac, Release_Mac.
         make usage:
 {{{
 Makefile Usage:"
