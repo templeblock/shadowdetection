@@ -39,6 +39,7 @@
      * make
      * gcc
      * g++
+     * libgomp (_for linux systems_)
      _Notice: Some libraries have them own requirements_
   == OpenCL ==
     === Supported device hardware ===
@@ -157,17 +158,20 @@ deca.png	shadowdeca1.jpg
 sh.jpg	shadowsh1.jpg
 }}}
 = Future =
-  == Very soon ==    
-    * AMD graphic cards support
+  == Done == 
     * ~~Complete switch to OpenCV C++ API~~
     * ~~MacOSX support~~
     * ~~Use precompiled openCL kernels~~
+    * ~~Support to use AMDCPUs in openCL processing~~
+  == Very soon ==    
+    * Parallelize libsvm training with OpenCL
+    * Support to use Intel CPUs in openCL processing
+    * AMD graphic cards support    
   == Soon ==
     * 32bit releases
     * Improve accuracy with SVM and machine learning
     * configure script
   == Later ==
-    * Support to use ~~AMD~~ and Intel CPUs in openCL processing
     * Windows and Visual Studio support
 = Contact =
   
