@@ -10,6 +10,7 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0
+    # Tested with Intel CPUs
     # Removed OpenMP support from Mac and OpenCL builds
     # Fixed issue with save binary on Mac (06/08/14)
     # Fixed load precompiled binary for AMD CPUs (06/07/14)
@@ -47,17 +48,18 @@
         * NVIDIA GeForce 600 series or above
         * NVIDIA Tesla K series
         * AMD CPUs
-          _Notice: May work on some other NVIDIA cards than specified but it is not tested, also may work on Intel CPUs but not tested_ 
+        * Intel CPUs (works even with AMD-APP-SDK-v2.9)
+          _Notice: May work on some other NVIDIA cards than specified but it is not tested_
         * Macintosh platforms supported
     === Supported host hardware ===
         * Intel CPUs
         * AMD CPUs
-        * On Macintosh all CPUs
+        * Macintosh platforms supported
     === Required software ===
       ==== NVIDIA GPUs ====
         * Latest NVIDIA OpenCL capable drivers
         * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
-      ==== AMD CPUs ====
+      ==== AMD and Intel CPUs ====
         * AMD-APP-SDK-v2.9 (if SDK installed at different location than /opt/AMDAPP/ then must set adequate lib and include paths)
       ==== Macintosh ====
         * XCode command line tools
@@ -163,10 +165,10 @@ sh.jpg	shadowsh1.jpg
     * ~~Complete switch to OpenCV C++ API~~
     * ~~MacOSX support~~
     * ~~Use precompiled openCL kernels~~
-    * ~~Support to use AMDCPUs in openCL processing~~
+    * ~~Support to use AMD CPUs in openCL processing~~
   == Very soon ==    
     * Parallelize libsvm training with OpenCL
-    * Support to use Intel CPUs in openCL processing
+    * ~~Support to use Intel CPUs in openCL processing~~
     * AMD graphic cards support    
   == Soon ==
     * 32bit releases
