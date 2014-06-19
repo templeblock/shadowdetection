@@ -10,8 +10,8 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0
-    # Tested with Intel CPUs
-    # Removed OpenMP support from Mac and OpenCL builds
+    # Tested with Intel CPUs (06/18/14)
+    # Removed OpenMP support from Mac and OpenCL builds (06/14/14)
     # Fixed issue with save binary on Mac (06/08/14)
     # Fixed load precompiled binary for AMD CPUs (06/07/14)
     # Added support for MacOSX (06/07/14)
