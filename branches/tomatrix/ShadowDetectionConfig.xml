@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<QsConfig>
+    <process>
+        <UseBatch>
+            false
+        </UseBatch>        
+    </process>
+    <settings>
+        
+        <openCL>            
+            <UsePrecompiledKernels>
+                false
+            </UsePrecompiledKernels>            
+            <platformid>
+                0
+            </platformid>
+            <deviceid>
+                0
+            </deviceid> 
+            <mac>
+                <useGPU>false</useGPU>
+            </mac>      
+        </openCL>
+        
+        <svm>
+            <openMP>
+                <threadNum>
+                    4
+                </threadNum>
+            </openMP>
+        </svm>
+        
+    </settings>
+</QsConfig>
