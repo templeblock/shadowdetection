@@ -10,6 +10,8 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.1.0
+    # Now works with AMD GPUs, tested on R9 270 (06/24/14)
+    # Libsvm training OpenCL parallelization stopped on current level, will be continued later (06/24/14)
     # Tested with Intel CPUs (06/18/14)
     # Removed OpenMP support from Mac and OpenCL builds (06/14/14)
     # Fixed issue with save binary on Mac (06/08/14)
@@ -48,19 +50,22 @@
         * NVIDIA GeForce 600 series or above
         * NVIDIA Tesla K series
         * AMD CPUs
+        * AMD GPUs series R9
         * Intel CPUs (works even with AMD-APP-SDK-v2.9)
-          _Notice: May work on some other NVIDIA cards than specified but it is not tested_
+          _Notice: May work on some other NVIDIA cards than specified but it is not tested, for AMD cards also may work with earlier models but not tested_
         * Macintosh platforms supported
     === Supported host hardware ===
         * Intel CPUs
         * AMD CPUs
-        * Macintosh platforms supported
+        * Macintosh platform's CPUs supported
     === Required software ===
       ==== NVIDIA GPUs ====
         * Latest NVIDIA OpenCL capable drivers
         * NVIDIA CUDA Toolkit v6 (if cuda toolkit is installed at different location than /usr/local/cuda-6.0/ then must set adequate lib and include paths)
       ==== AMD and Intel CPUs ====
         * AMD-APP-SDK-v2.9 (if SDK installed at different location than /opt/AMDAPP/ then must set adequate lib and include paths)
+      ==== AMD GPUs ====
+        * AMD Catalyst drivers ver 14.10 or above
       ==== Macintosh ====
         * XCode command line tools
       * OpenCV built with WITH_OPENCL turned ON
@@ -166,15 +171,19 @@ sh.jpg	shadowsh1.jpg
     * ~~MacOSX support~~
     * ~~Use precompiled openCL kernels~~
     * ~~Support to use AMD CPUs in openCL processing~~
-  == Very soon ==    
-    * Parallelize libsvm training with OpenCL
+    * ~~Parallelize libsvm training with OpenCL~~
     * ~~Support to use Intel CPUs in openCL processing~~
-    * AMD graphic cards support    
-  == Soon ==
-    * 32bit releases
+    * ~~AMD graphic cards support~~
+  == Very soon ==    
     * Improve accuracy with SVM and machine learning
+    * Parallelize libsvm predict on image level
+    * New options in config file due to add possibility to configure libsvm
+  == Soon ==
+    * More libsvm training parallelization especially optimisations for GPUs
+    * 32bit releases
     * configure script
   == Later ==
+    * Multi device OpenCL executions
     * Windows and Visual Studio support
 = Contact =
   
