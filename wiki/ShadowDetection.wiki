@@ -9,6 +9,13 @@
   * [ShadowDetection#Batch_file Batch file]
   * [ShadowDetection#Contact Contact] 
 = News =
+  * Version 0.2.0
+    # Parallelized svm prediction with OpenCL (07/01/14)
+    # Removed some memory leaks (07/01/14)
+    # Started using JAVA for external tools (07/01/14)
+    # Started using first "dummy" version of memory manager (07/01/14)
+    # Added tool for making training sets (07/01/14)
+    # For non OpenCL builds some parts of svm parallelized with OpenMP (07/01/14)
   * Version 0.1.0
     # Now works with AMD GPUs, tested on R9 270 (06/24/14)
     # Libsvm training OpenCL parallelization stopped on current level, will be continued later (06/24/14)
@@ -77,31 +84,62 @@
 <QsConfig>
     <process>
         <UseBatch>
-            true
-        </UseBatch>        
+            false
+        </UseBatch>
+        <Training>
+            <distribute0and1>
+                true
+            </distribute0and1>
+        </Training>
+        <Prediction>
+            <modelFile>
+                bigModel.model
+            </modelFile>
+            <usePrediction>
+                false
+            </usePrediction>
+        </Prediction>        
     </process>
     <settings>        
-        <openCL>
+        <openCL>            
             <UsePrecompiledKernels>
-                true
-            </UsePrecompiledKernels>             
+                false
+            </UsePrecompiledKernels>            
             <platformid>
                 0
             </platformid>
             <deviceid>
                 0
-            </deviceid>
-            <mac>
-                <useGPU>false</useGPU>
-            </mac>        
+            </deviceid>    
         </openCL>        
+        <openMP>
+            <threadNum>
+                4
+            </threadNum>
+        </openMP>        
+        <svm>            
+            <!-- 0=C-SVC, 1=nu-SVC, 2=one-class, 3=epsilon-SVR, 4=nu-SVR -->
+            <svm_type>
+                0
+            </svm_type>
+            <!-- 0=linear, 1=polynomial, 2=radial basis function, 3=sigmoid, 4-not supported -->
+            <kernel_type>
+                2
+            </kernel_type>
+        </svm>        
     </settings>
 </QsConfig>
 }}}
 
-  "process.openCL.UseBatch" variable should have true/false value. 
+  "process.UseBatch" variable should have true/false value. 
     * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
     * If it is false then specify input image file and output file with extension
+
+  "process.Training.distribute0and1" variable specifies if classes in svm training will be distributed or not
+
+  "process.Prediction.modelFile" path to model file if svm prediction is used
+
+  "process.Prediction.usePrediction" specifies whether or not to use svm prediction in detection
 
   "settings.openCL.platformid" specifies platform index used in openCL processing
 
@@ -109,7 +147,11 @@
 
   "settings.openCL.UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
   
-  "settings.openCL.mac.useGPU" flag wich indicates what to use as device on MacOsX systems. If true GPU will be used, otherwise CPU will be used. On other systems than MacOsX flag value will be ignored.
+  "settings.openMP.threadNum" determine number of threads used by OpenMP in non OpenCL builds
+
+  "settings.svm.svm_type" specifies svm type used in creating model file (_see comment for more_)
+
+  "settings.svm.kernel_type" specifies kernel type used in creating model file (_see comment for more_)
 
 = Usage =
   == Build ==
@@ -131,7 +173,7 @@ Makefile Usage:"
     * After successful build you will have appropriate executables.
     * OpenCL executables are using openCL in processing, other not.
     * Set configuration file ( see [ShadowDetection#Config Config] )
-    * Call executable
+    * Call executable from root dir:
       # If use batch with parameter which indicates batch processing file (see [ShadowDetection#Batch_file Batch file] ). Example:
 {{{
 ./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection list.csv
@@ -174,16 +216,23 @@ sh.jpg	shadowsh1.jpg
     * ~~Parallelize libsvm training with OpenCL~~
     * ~~Support to use Intel CPUs in openCL processing~~
     * ~~AMD graphic cards support~~
+    * ~~Parallelize libsvm predict on image level~~
+    * ~~New options in config file due to add possibility to configure libsvm~~
   == Very soon ==    
-    * Improve accuracy with SVM and machine learning
-    * Parallelize libsvm predict on image level
-    * New options in config file due to add possibility to configure libsvm
+    * Improve accuracy with SVM
+    * Provide model file
+    * Switch to single float precision in svm prediction
+    * Update documentation
+    * Add checks for start parameters
   == Soon ==
-    * More libsvm training parallelization especially optimisations for GPUs
+    * More libsvm training OpenCL parallelization especially optimisations for GPUs
+    * More libsvm OpenMP parallelization
     * 32bit releases
     * configure script
+    * Improve accuracy with machine learning
   == Later ==
     * Multi device OpenCL executions
+    * Library builds
     * Windows and Visual Studio support
 = Contact =
   
