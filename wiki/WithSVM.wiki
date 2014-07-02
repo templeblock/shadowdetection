@@ -8,13 +8,13 @@
 
 For training were used about 40 low resulution (less than 160K pixels per image) digital images.
 
-At first shadows were detected on all images using tsai's algorithm (based on proportion of hue and intesity). After that manually "good" training candidates were chosen. Good candidate is image were shadows were detected properly. Then for each pixel of each candidate were extracted features which may be significant for detecting shadows. In basics features are proportions of hue and saturation, velocity and lighting (h/s, h/v, h/l), also as proportions of saturation and velocity, lighting (s/v, s/l).
+At first shadows were detected on all images using tsai's algorithm (based on proportion of hue and intensity). After that "good" training candidates were chosen manual. Good candidate is image were shadows were detected properly. Then for each pixel of each candidate were extracted features which may be significant for detecting shadows. In basics features are proportions of hue and saturation, velocity and lighting (h/s, h/v, h/l), also as proportions of saturation and velocity, lighting (s/v, s/l).
 
-For shadow detection there are two classes of pixels, pixel is shadow or not (0 or 1). So "equal" number of shadow and nonshadow pixels where chosen from each image, using best first manner. And that were "training pixels".
+For shadow detection there are two classes of pixels, pixel is shadow or not (0 or 1). So "equal" number of shadow and non-shadow pixels where chosen from each image, in "best first" manner. And that were "training pixels".
 
 = Model = 
 
-Using training pixels model was made using C-SVC svm type and RBF kernel. Checking model on the trainig set shows accuracy of 75%, with small number of false positive results. And that was a signal that model can improve accuracy of global shadow detection.
+Using training pixels model was made using C-SVC SVM type and RBF kernel. Checking model on the training set shows accuracy of 75%, with small number of false positive results. And that was a signal that model can improve accuracy of global shadow detection.
 
 = PredictionResults =
 
