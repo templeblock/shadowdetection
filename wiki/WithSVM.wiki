@@ -1,0 +1,57 @@
+#summary Influence of svm training / prediction on shadow detection process
+
+= Contents =
+  * [WithSVM#TrainingSet Training set]
+  * [WithSVM#Model Model]
+  * [WithSVM#PredictionResults Prediction results]
+= TrainingSet =
+
+For training were used about 40 low resulution (less than 160K pixels per image) digital images.
+
+At first shadows were detected on all images using tsai's algorithm (based on proportion of hue and intesity). After that manually "good" training candidates were chosen. Good candidate is image were shadows were detected properly. Then for each pixel of each candidate were extracted features which may be significant for detecting shadows. In basics features are proportions of hue and saturation, velocity and lighting (h/s, h/v, h/l), also as proportions of saturation and velocity, lighting (s/v, s/l).
+
+For shadow detection there are two classes of pixels, pixel is shadow or not (0 or 1). So "equal" number of shadow and nonshadow pixels where chosen from each image, using best first paradigm. And that were "training pixels".
+
+= Model = 
+
+Using training pixels model was made using C-SVC svm type and RBF kernel. Checking model on the trainig set shows accuracy of 75%, with small number of false positive results. And that was a signal that model can improve accuracy of global shadow detection.
+
+= PredictionResults =
+
+So there are couple of results:
+
+Original image:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/bamboo_zps16e83dbf.jpg
+
+Shadows detected without SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/bambooShadowNoSVM_zpsf7f9eebc.jpg
+
+Shadows detected with SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/bambooShadow_zps04c5493e.jpg
+
+Original image:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/hawaii_zpsce99c17c.jpg
+
+Shadows detected without SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/hawaiiShadowNoSVM_zps69572531.jpg
+
+Shadows detected with SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/hawaiiShadow_zps6c0206fe.jpg
+
+Original image:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/Trees_zpsad863990.jpg
+
+Shadows detected without SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/TreesShadowNoSVM_zps30b14bab.jpg
+
+Shadows detected with SVM prediction:
+
+http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/TreesShadow_zpsc1bb2437.jpg
