@@ -4,6 +4,8 @@
 
 Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net]
 
+<wiki:gadget url="http://www.ohloh.net/p/716824/widgets/project_factoids_stats.xml" height="270" border="1"/>
+
 = Contents =
   * [ShadowDetection#News News]
   * [ShadowDetection#Requirements Requirements]
