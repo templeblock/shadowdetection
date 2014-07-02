@@ -76,7 +76,7 @@
       ==== Macintosh ====
         * XCode command line tools
       * OpenCV built with WITH_OPENCL turned ON
-          [http://i969.photobucket.com/albums/ae180/markodjurovic/opencv_zpsb0a30251.png]
+          [http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/opencv_zpsb0a30251.png]
 = Config =
   Configuration file is: ShadowDetectionConfig.xml and looks like this:
 {{{
