@@ -18,7 +18,7 @@ Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net]
   * Version 0.2.0
     # Uploaded model file (_see: [http://code.google.com/p/shadowdetection/wiki/ShadowDetection#SVM_Prediction SVM Predictions] for instructions_) (07/02/14)
     # Ability to use svm prediction for more accurate results, see: [http://code.google.com/p/shadowdetection/wiki/WithSVM With SVM] (07/02/14)
-    # Parallelized svm prediction with OpenCL (07/01/14)
+    # Parallelized svm prediction (on image level) with OpenCL (still not optimal )(07/01/14)
     # Removed some memory leaks (07/01/14)
     # Started using JAVA for external tools (07/01/14)
     # Started using first "dummy" version of memory manager (07/01/14)
