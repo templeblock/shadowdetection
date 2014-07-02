@@ -10,6 +10,7 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.2.0
+    # Uploaded model file: [http://www.mediafire.com/download/7a67h508fz5jtb1/bigModel.model.gz model file]
     # Ability to use svm prediction for more accurate results, see: [http://code.google.com/p/shadowdetection/wiki/WithSVM With SVM] (07/02/14)
     # Parallelized svm prediction with OpenCL (07/01/14)
     # Removed some memory leaks (07/01/14)
@@ -53,6 +54,8 @@
      * g++
      * libgomp (_for linux systems_)
      _Notice: Some libraries have them own requirements_
+  == SVM Prediction ==
+     * For SVM prediction you need model file. It candownloaded from: [http://www.mediafire.com/download/7a67h508fz5jtb1/bigModel.model.gz model]. Gunzip it to root dir of project. For enabling SVM prediction see config section: [ShadowDetection#Config Config] 
   == OpenCL ==
     === Supported device hardware ===
         * NVIDIA GeForce 600 series or above
