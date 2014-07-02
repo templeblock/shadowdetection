@@ -18,7 +18,7 @@ Using training pixels model was made using C-SVC svm type and RBF kernel. Checki
 
 = PredictionResults =
 
-So there are couple of results:
+So there are couple of results, there are images with worst results with basic algorithm (algorithm not using SVM prediction):
 
 Original image:
 
