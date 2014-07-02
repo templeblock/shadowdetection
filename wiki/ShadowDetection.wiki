@@ -182,7 +182,7 @@ Makefile Usage:"
 {{{
 ./dist/ReleaseOpenCL/GNU+CUDA-Linux-x86/shadowdetection 0.jpg out.jpg
 }}}
-    * Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds 0list will list all platforms and devices, example:
+    * Additional parameters -help and -list. Help will provide link to this wiki page. For "openCL" builds -list will list all platforms and devices, example:
 {{{
 $ ./dist/ReleaseOpenCL_AMD/GNU-Linux-x86/shadowdetection -list
 Found 2 platforms.
