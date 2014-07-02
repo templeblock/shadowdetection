@@ -10,7 +10,7 @@ For training were used about 40 low resulution (less than 160K pixels per image)
 
 At first shadows were detected on all images using tsai's algorithm (based on proportion of hue and intesity). After that manually "good" training candidates were chosen. Good candidate is image were shadows were detected properly. Then for each pixel of each candidate were extracted features which may be significant for detecting shadows. In basics features are proportions of hue and saturation, velocity and lighting (h/s, h/v, h/l), also as proportions of saturation and velocity, lighting (s/v, s/l).
 
-For shadow detection there are two classes of pixels, pixel is shadow or not (0 or 1). So "equal" number of shadow and nonshadow pixels where chosen from each image, using best first paradigm. And that were "training pixels".
+For shadow detection there are two classes of pixels, pixel is shadow or not (0 or 1). So "equal" number of shadow and nonshadow pixels where chosen from each image, using best first manner. And that were "training pixels".
 
 = Model = 
 
