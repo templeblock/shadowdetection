@@ -1,5 +1,9 @@
 #summary Shadow detection on digital images.
 
+= Aditional info =
+
+Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net]
+
 = Contents =
   * [ShadowDetection#News News]
   * [ShadowDetection#Requirements Requirements]
