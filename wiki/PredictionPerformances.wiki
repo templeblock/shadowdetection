@@ -1,7 +1,7 @@
 #summary Performances of svm predictions on different hardware using different techniques.
 
 = Test Hardware =
-  * AMD Athlon II 651 x4
+  * AMD Athlon II 651 x4 Quad Core 3000MHz
   * 16GB DDR3 RAM 1333MHz
   * AMD R9 270 2GB GDDR5
 
