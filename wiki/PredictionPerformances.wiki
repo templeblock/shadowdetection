@@ -83,7 +83,7 @@ float kfunction_rbf(    const __global float* x, const size_t xLen,
 } 
 }}}
 
-  Of course that performance gain is possible when numbers of nodes in nodes' array are aligned to numbers which allows usage of vectorisation ((2 to power of n) + (2 to power of m)..., when m, n ... are > 1). Here number of elements in array is 13.
+  Of course that performance gain is possible when numbers of nodes in nodes' array are aligned to numbers which allows more usage of vectorisation ((2 to power of n) + (2 to power of m)..., when m, n ... are > 1). Here number of elements in array is 13.
 
 = Limitations =
   This implementation of libsvm is not always compatible with original implementation. Here every array must have same number of elements (both in training and prediction). Also in prediction input arrays and model arrays must have same number of elements (model is prediction model built in training process of SVM) 
