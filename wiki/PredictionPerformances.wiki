@@ -4,6 +4,7 @@
   * [PredictionPerformances#Test_Hardware Test Configuration]
   * [PredictionPerformances#Performance_diagram Performance Diagram]
   * [PredictionPerformances#What_have_been_done What have been done]
+  * [PredictionPerformances#Limitations Limitations]
 = Test_Hardware =
   * AMD Athlon II 651 x4 Quad Core 3000MHz
   * 16GB DDR3 RAM 1333MHz (2 x 4GB + 1 x 8 GB, all modules Kingston Hyperx Blue)
@@ -68,8 +69,7 @@ float kfunction_rbf(    const __global float* x, const size_t xLen,
 }
 }}}
 
-is more than 5 times faster than
-
+  is more than 5 times faster than
 {{{
 float kfunction_rbf(    const __global float* x, const size_t xLen,
                         const __global float* y, const size_t yLen,
@@ -77,8 +77,13 @@ float kfunction_rbf(    const __global float* x, const size_t xLen,
     float sum = 0;
     for (int i = 0; i < xLen; i++){
        float d = x[i]  - y[i];
-            sum += d * d;
+       sum += d * d;
     }
     return exp(-gamma * sum); 
 } 
 }}}
+
+  Of course that performance gain is possible when numbers of nodes in nodes' array are aligned to numbers which allows usage of vectorisation ((2 to power of n) + (2 to power of m)..., when m, n ... are > 1). Here number of elements in array is 13.
+
+= Limitations =
+  This implementation of libsvm is not always compatible with original implementation. Here every array must have same number of elements (both in training and prediction). Also in prediction input arrays and model arrays must have same number of elements (model is prediction model built in training process of SVM) 
