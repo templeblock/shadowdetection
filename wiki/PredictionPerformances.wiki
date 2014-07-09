@@ -69,7 +69,7 @@ float kfunction_rbf(    const __global float* x, const size_t xLen,
 }
 }}}
 
-  is more than 5 times faster than
+  is more than 3 times faster than
 {{{
 float kfunction_rbf(    const __global float* x, const size_t xLen,
                         const __global float* y, const size_t yLen,
