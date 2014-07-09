@@ -13,6 +13,7 @@ Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net], t
   * [ShadowDetection#Future Future] 
   * [ShadowDetection#Usage Usage]
   * [ShadowDetection#Batch_file Batch file]
+  * [ShadowDetection#Optimisation Optimisation] 
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.2.0
@@ -230,13 +231,14 @@ sh.jpg	shadowsh1.jpg
     * ~~AMD graphic cards support~~
     * ~~Parallelize libsvm predict on image level~~
     * ~~New options in config file due to add possibility to configure libsvm~~
-  == Very soon ==    
     * ~~Improve accuracy with SVM~~
     * ~~Provide model file~~
-    * Switch to single float precision in svm prediction
-    * Update documentation
+    * ~~Switch to single float precision in svm prediction~~
+    * ~~Update documentation~~
     * ~~Add checks for start parameters~~
-    * Performance comparations charts (parallelized vs. non-parallelized)
+    * ~~Performance comparations charts (parallelized vs. non-parallelized)~~
+  == Very soon ==    
+    Currently empty :)
   == Soon ==
     * More libsvm training OpenCL parallelization especially optimisations for GPUs
     * More libsvm OpenMP parallelization
@@ -247,6 +249,8 @@ sh.jpg	shadowsh1.jpg
     * Multi device OpenCL executions
     * Library builds
     * Windows and Visual Studio support
+= Optimisation =
+  For performances and explanantion of optimisation techniques please see: [https://code.google.com/p/shadowdetection/wiki/PredictionPerformances Predcition Performances]
 = Contact =
   
   For any questions, suggestions, issues notifications, etc. please contact markodjurovic@yahoo.com
