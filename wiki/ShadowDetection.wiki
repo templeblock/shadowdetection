@@ -16,6 +16,8 @@ Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net], t
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.2.0
+    # Finished optimizing for svm predict. Target hardware was GPU. Results very good, can be seen here: [http://code.google.com/p/shadowdetection/wiki/PredictionPerformances Performances] (07/08/14)
+    # Fixed issue with non OpenCL builds (07/08/14)
     # Uploaded model file (_see: [http://code.google.com/p/shadowdetection/wiki/ShadowDetection#SVM_Prediction SVM Predictions] for instructions_) (07/02/14)
     # Ability to use svm prediction for more accurate results, see: [http://code.google.com/p/shadowdetection/wiki/WithSVM With SVM] (07/02/14)
     # Parallelized svm prediction (on image level) with OpenCL (still not optimal )(07/01/14)
