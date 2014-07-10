@@ -3,7 +3,7 @@
 = Contents =
   * [PredictionPerformances#Test_Hardware Test Configuration]
   * [PredictionPerformances#Performance_diagram Performance Diagram]
-  * [PredictionPerformances#What_have_been_done What have been done]
+  * [PredictionPerformances#What_has_been_done What has been done]
   * [PredictionPerformances#Limitations Limitations]
 = Test_Hardware =
   * AMD Athlon II 651 x4 Quad Core 3000MHz
@@ -14,7 +14,7 @@
 [http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/performances_zpsa1090525.png]
 
   Yes, these values are true. On GPUs we have 28 seconds for image with dimensions 400x266, compare with 1012 seconds on CPUs. Both OpenCLCPU and OpenCLGPU configurations are using same OpenCL code.
-= What_have_been_done = 
+= What_has_been_done = 
 
   In this what I've called openMP build/configurations, for openMP parallelization where used suggestions from authors of libsvm. So basically SVM kernel calculations were parallelized.
 
