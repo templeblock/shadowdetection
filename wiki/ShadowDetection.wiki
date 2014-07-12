@@ -182,6 +182,7 @@ Makefile Usage:"
 	make [SUB=no] all"
 	make help"
 }}}
+        OpenCL builds with no extension (DebugOpenCL and ReleaseOpenCL) are dedicated to NVIDIA platform
      * If required dependecies are not insatlled at default locations, you got to set adequate lib and include dirs in make files.
   == Use instructions ==
     * After successful build you will have appropriate executables.
@@ -239,14 +240,14 @@ sh.jpg	shadowsh1.jpg
     * ~~Add checks for start parameters~~
     * ~~Performance comparations charts (parallelized vs. non-parallelized)~~
   == Very soon ==    
-    Currently empty :)
-  == Soon ==
     * More libsvm training OpenCL parallelization especially optimisations for GPUs
     * More libsvm OpenMP parallelization
+  == Soon ==    
     * 32bit releases
     * configure script
     * Improve accuracy with machine learning
   == Later ==
+    * Improve shadow detection with new techniques
     * Multi device OpenCL executions
     * Library builds
     * Windows and Visual Studio support
