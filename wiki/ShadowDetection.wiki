@@ -2,11 +2,11 @@
 
 = Aditional info =
 
-  Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net], thanks guys for this :).
+  * Project can be traced at: [https://www.ohloh.net/p/shadowdetection ohloh.net], thanks guys for this :).
 
 <wiki:gadget url="http://www.ohloh.net/p/716824/widgets/project_thin_badge.xml" height="52" border="0"/>
 
-  Project uses modified libsvm project: [http://www.csie.ntu.edu.tw/~cjlin/libsvm/], thanks to authors on this great and reliable library.
+  * *Project uses modified libsvm project: [http://www.csie.ntu.edu.tw/~cjlin/libsvm/], thanks to authors on this great and reliable library.*
 
 = Contents =
   * [ShadowDetection#News News]
