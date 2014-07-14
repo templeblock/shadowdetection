@@ -21,7 +21,7 @@
   Currently only parts of libsvm training process were parallelized (kernel values calculations). Opencl CPU and OpenCL GPU configurations are using same OpenCL code, but memory spaces are different. CPU configuration uses host memory space, and GPU configuration uses device memory space. Although in CPU configuration there are no (or minimal) memory coping, GPU is, in total, still faster. 
 = Limitations =
   Every record in data file must have same number of features, and there is no possibility to skip indexes. Indexes must be in ascending order. So this implementation is not fully compatible with native libsvm implementation.
-*Currently only SVC and SVR types of are supported, other are in phase of native implementation with parallelization with OpenMP suggested by libsvm authors.*
+*Currently only SVC and SVR types of are supported, one class SVM is in phase of native implementation with parallelization with OpenMP suggested by libsvm authors.*
 = Usage =
   Build wanted build (_please see: [https://code.google.com/p/shadowdetection/wiki/ShadowDetection#Command_line]_), and start it with arguments: -training _data_file output_model_file_. For example (if using AMD platform):
 {{{
