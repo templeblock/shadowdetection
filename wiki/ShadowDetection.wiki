@@ -18,6 +18,7 @@
   * [ShadowDetection#Optimisation Optimisation] 
   * [ShadowDetection#Contact Contact] 
 = News =
+  * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Version 0.2.0
     # Fixed issues with NU-SVR prediction (07/24/14)
     # For now paused with svm training process parallelization (07/24/14)
