@@ -19,6 +19,8 @@
   * [ShadowDetection#Contact Contact] 
 = News =
   * Version 0.2.0
+    # Fixed issues with NU-SVR prediction (07/24/14)
+    # For now paused with svm training process parallelization (07/24/14)
     # Added support for SVR trainings (07/14/14)
     # Done more svm training optimisation (07/12/14)
     # Fixed memory release issue (07/12/14)
