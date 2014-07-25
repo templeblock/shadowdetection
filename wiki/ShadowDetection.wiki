@@ -247,15 +247,11 @@ sh.jpg	shadowsh1.jpg
     * ~~Add checks for start parameters~~
     * ~~Performance comparations charts (parallelized vs. non-parallelized)~~
   == Very soon ==    
-    * More libsvm training OpenCL parallelization especially optimisations for GPUs
-    * More libsvm OpenMP parallelization
-  == Soon ==    
-    * 32bit releases
+    * Improve shadow detection with new techniques
+  == Soon ==        
     * configure script
     * Improve accuracy with machine learning
-  == Later ==
-    * Improve shadow detection with new techniques
-    * Multi device OpenCL executions
+  == Later ==   
     * Library builds
     * Windows and Visual Studio support
 = Optimisation =
