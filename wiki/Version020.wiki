@@ -1,3 +1,4 @@
+#summary About version 0.2.0
 = Info =
 
 Version source code is aviable at: http://shadowdetection.googlecode.com/svn/branches/shadowdetection_0.2.0
