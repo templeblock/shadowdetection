@@ -1,0 +1,83 @@
+#summary How to use configuration file
+
+= File =
+
+Configuration file is: ShadowDetectionConfig.xml and looks like this:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<QsConfig>
+    <process>
+        <UseBatch>
+            false
+        </UseBatch>
+        <Training>
+            <distribute0and1>
+                true
+            </distribute0and1>
+        </Training>
+        <Prediction>
+            <modelFile>
+                bigModel.model
+            </modelFile>
+            <usePrediction>
+                false
+            </usePrediction>
+        </Prediction>        
+    </process>
+    <settings>        
+        <openCL>            
+            <UsePrecompiledKernels>
+                false
+            </UsePrecompiledKernels>            
+            <platformid>
+                0
+            </platformid>
+            <deviceid>
+                0
+            </deviceid>    
+        </openCL>        
+        <openMP>
+            <threadNum>
+                4
+            </threadNum>
+        </openMP>        
+        <svm>            
+            <!-- 0=C-SVC, 1=nu-SVC, 2=one-class, 3=epsilon-SVR, 4=nu-SVR -->
+            <svm_type>
+                0
+            </svm_type>
+            <!-- 0=linear, 1=polynomial, 2=radial basis function, 3=sigmoid, 4-not supported -->
+            <kernel_type>
+                2
+            </kernel_type>
+        </svm>        
+    </settings>
+</QsConfig>
+}}}
+
+= Variables =
+
+  "process.UseBatch" variable should have true/false value. 
+    * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
+    * If it is false then specify input image file and output file with extension
+
+  "process.Training.distribute0and1" variable specifies if classes in svm training will be distributed or not
+
+  "process.Prediction.modelFile" path to model file if svm prediction is used
+
+  "process.Prediction.usePrediction" specifies whether or not to use svm prediction in detection
+
+  "settings.openCL.platformid" specifies platform index used in openCL processing
+
+  "settings.openCL.deviceid" specifies device index of selected platform used in openCL processing
+
+  "settings.openCL.UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
+  
+  "settings.openMP.threadNum" determine number of threads used by OpenMP in non OpenCL builds
+
+  "settings.svm.svm_type" specifies svm type used in creating model file (_see comment for more_)
+
+  "settings.svm.kernel_type" specifies kernel type used in creating model file (_see comment for more_)
+
+= Other Varibles =
+Explanation soon.
