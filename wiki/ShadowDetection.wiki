@@ -20,8 +20,10 @@
   * [ShadowDetection#Batch_file Batch file]
   * [ShadowDetection#Optimisation Optimisation]
   * [ShadowDetection#Results Results] 
-  * [ShadowDetection#Contact Contact] 
-  * [ShadowDetection#What_has_been_done What has been done] 
+  * [ShadowDetection#What_has_been_done What has been done]
+  * [ShadowDetection#Make_your_model Make your model]
+  * [ShadowDetection#Expand_with_new_features Expand with new features]
+  * [ShadowDetection#Contact Contact]  
 = News =
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
@@ -202,6 +204,10 @@ sh.jpg	shadowsh1.jpg
   Please see: [http://code.google.com/p/shadowdetection/wiki/Results Results]
 = What_has_been_done =
   Please see: [http://code.google.com/p/shadowdetection/wiki/WhatHasBeenDone What has been done]
+= Make_your_model =
+  Please see: [http://code.google.com/p/shadowdetection/wiki/MakeYourModel Make your model]
+= Expand_with_new_features =
+  Please see: [http://code.google.com/p/shadowdetection/wiki/ExpandWithNewFeatures Expand with new features]
 = Contact =
   
   For any questions, suggestions, issues notifications, etc. please contact markodjurovic@yahoo.com
