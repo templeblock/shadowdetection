@@ -7,7 +7,10 @@
 <wiki:gadget url="http://www.ohloh.net/p/716824/widgets/project_thin_badge.xml" height="52" border="0"/>
 
   * *Project uses modified libsvm project: [http://www.csie.ntu.edu.tw/~cjlin/libsvm/], thanks to authors on this great and reliable library.*
-
+= Current version =
+  Current version is: 0.6.0
+  
+  About version 0.2.0 please see: [http://code.google.com/p/shadowdetection/wiki/Version020 ver0.2.0]
 = Contents =
   * [ShadowDetection#News News]
   * [ShadowDetection#Requirements Requirements]
@@ -15,11 +18,22 @@
   * [ShadowDetection#Future Future] 
   * [ShadowDetection#Usage Usage]
   * [ShadowDetection#Batch_file Batch file]
-  * [ShadowDetection#Optimisation Optimisation] 
+  * [ShadowDetection#Optimisation Optimisation]
+  * [ShadowDetection#Results Results] 
   * [ShadowDetection#Contact Contact] 
+  * [ShadowDetection#What_has_been_done What has been done] 
 = News =
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
-  * Mac OSX builds abandoned for now. 
+  * Mac OSX builds abandoned for now.
+  * Version 0.6.0
+    # New prediction based on logistic regression
+    # Fixed false detected shadow pixels on lightening areas
+    # Partially fixed false detected in sky areas
+    # Sky detection algorithm
+    # Support for making prediction models
+    # New tools in order to make new models
+    # First version of API/Framework for general pixel categorsation
+    # Abandoned Mac OSX support for now, because of issues with OpenCL
   * Version 0.2.0
     # Fixed issues with NU-SVR prediction (07/24/14)
     # For now paused with svm training process parallelization (07/24/14)
@@ -72,7 +86,9 @@
      * libgomp (_for linux systems_)
      _Notice: Some libraries have them own requirements_
   == SVM Prediction ==
-     * For SVM prediction you need model file. It candownloaded from: [http://www.mediafire.com/download/7a67h508fz5jtb1/bigModel.model.gz model]. Gunzip it to root dir of project. For enabling SVM prediction see config section: [ShadowDetection#Config Config] 
+     * For SVM prediction you need model file. It candownloaded from: [http://www.mediafire.com/download/3dbj738o4wi4z4g/bigModel_RemovedThree.model.gz model]. Gunzip it to root dir of project. For enabling/disabling SVM prediction see config section: [ShadowDetection#Config Config]
+
+    _Notice: Old model file is not compatible with version 0.6.0_ 
   == OpenCL ==
     === Supported device hardware ===
         * NVIDIA GeForce 600 series or above
@@ -95,87 +111,13 @@
       * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/opencv_zpsb0a30251.png]
 = Config =
-  Configuration file is: ShadowDetectionConfig.xml and looks like this:
-{{{
-<?xml version="1.0" encoding="utf-8"?>
-<QsConfig>
-    <process>
-        <UseBatch>
-            false
-        </UseBatch>
-        <Training>
-            <distribute0and1>
-                true
-            </distribute0and1>
-        </Training>
-        <Prediction>
-            <modelFile>
-                bigModel.model
-            </modelFile>
-            <usePrediction>
-                false
-            </usePrediction>
-        </Prediction>        
-    </process>
-    <settings>        
-        <openCL>            
-            <UsePrecompiledKernels>
-                false
-            </UsePrecompiledKernels>            
-            <platformid>
-                0
-            </platformid>
-            <deviceid>
-                0
-            </deviceid>    
-        </openCL>        
-        <openMP>
-            <threadNum>
-                4
-            </threadNum>
-        </openMP>        
-        <svm>            
-            <!-- 0=C-SVC, 1=nu-SVC, 2=one-class, 3=epsilon-SVR, 4=nu-SVR -->
-            <svm_type>
-                0
-            </svm_type>
-            <!-- 0=linear, 1=polynomial, 2=radial basis function, 3=sigmoid, 4-not supported -->
-            <kernel_type>
-                2
-            </kernel_type>
-        </svm>        
-    </settings>
-</QsConfig>
-}}}
-
-  "process.UseBatch" variable should have true/false value. 
-    * If it is true then specify file with list of images should be processed ( look [ShadowDetection#Usage Usage] )
-    * If it is false then specify input image file and output file with extension
-
-  "process.Training.distribute0and1" variable specifies if classes in svm training will be distributed or not
-
-  "process.Prediction.modelFile" path to model file if svm prediction is used
-
-  "process.Prediction.usePrediction" specifies whether or not to use svm prediction in detection
-
-  "settings.openCL.platformid" specifies platform index used in openCL processing
-
-  "settings.openCL.deviceid" specifies device index of selected platform used in openCL processing
-
-  "settings.openCL.UsePrecompiledKernels" flag which indicates if use precompiled OpenCL kernel binaries (_Notice: currently affects only GPUs devices_)
-  
-  "settings.openMP.threadNum" determine number of threads used by OpenMP in non OpenCL builds
-
-  "settings.svm.svm_type" specifies svm type used in creating model file (_see comment for more_)
-
-  "settings.svm.kernel_type" specifies kernel type used in creating model file (_see comment for more_)
-
+Please see: [https://code.google.com/p/shadowdetection/wiki/ConfigurationFile Configuration file]
 = Usage =
   == Build ==
     === NetBeans IDE ===
       This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
     === Command line ===
-      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD, DebugOpenCL_Mac, ReleaseOpenCL_Mac, Debug_Mac, Release_Mac.
+      * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD.
         make usage:
 {{{
 Makefile Usage:"
@@ -241,17 +183,25 @@ sh.jpg	shadowsh1.jpg
     * ~~Switch to single float precision in svm prediction~~
     * ~~Update documentation~~
     * ~~Add checks for start parameters~~
-    * ~~Performance comparations charts (parallelized vs. non-parallelized)~~
+    * ~~Performance comparation charts (parallelized vs. non-parallelized)~~
+    * ~~Improve shadow detection with new techniques~~
   == Very soon ==    
-    * Improve shadow detection with new techniques
+    * Parallel "regression prediction"
+    * More API interfaces which will allow to extend functionality.
+    * General pixel categorisation framework (in version 1.0.0)
+    * API documentation (in version 1.0.0)
   == Soon ==        
-    * configure script
-    * Improve accuracy with machine learning
+    * configure script (in version 1.0.0)
+    * Improve accuracy with machine learning (in version 1.0.0)
   == Later ==   
-    * Library builds
-    * Windows and Visual Studio support
+    * Windows and Visual Studio support.
+    * Return Mac OSX builds.
 = Optimisation =
-  For performances and explanantion of optimisation techniques please see: [https://code.google.com/p/shadowdetection/wiki/PredictionPerformances Predcition Performances]
+  For performances and explanantion of optimisation techniques please see: [http://code.google.com/p/shadowdetection/wiki/PredictionPerformances Prediction Performances]
+= Results =
+  Please see: [http://code.google.com/p/shadowdetection/wiki/Results Results]
+= What_has_been_done =
+  Please see: [https://code.google.com/p/shadowdetection/wiki/WhatHasBeenDone What has been done]
 = Contact =
   
   For any questions, suggestions, issues notifications, etc. please contact markodjurovic@yahoo.com
