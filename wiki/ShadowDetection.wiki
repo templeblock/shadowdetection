@@ -28,14 +28,15 @@
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
   * Version 0.6.0
-    # New prediction based on logistic regression
-    # Fixed false detected shadow pixels on lightening areas
-    # Partially fixed false detected in sky areas
-    # Sky detection algorithm
-    # Support for making prediction models
-    # New tools in order to make new models
-    # First version of API/Framework for general pixel categorsation
-    # Abandoned Mac OSX support for now, because of issues with OpenCL
+    # New prediction based on logistic regression (08/24/14)
+    # Fixed false detected shadow pixels on lightening areas (08/24/14)
+    # Partially fixed false detected in sky areas (08/24/14)
+    # Sky detection algorithm (08/24/14)
+    # Support for making prediction models (08/24/14)
+    # New tools in order to make new models (08/24/14)
+    # First version of API/Framework for general pixel categorsation (08/24/14)
+    # Abandoned Mac OSX support for now, because of issues with OpenCL (08/24/14)
+    # New model for SVM prediction (08/24/14)
   * Version 0.2.0
     # Fixed issues with NU-SVR prediction (07/24/14)
     # For now paused with svm training process parallelization (07/24/14)
@@ -46,7 +47,7 @@
     # Finished optimizing for svm predict. Target hardware was GPU. Results very good, can be seen here: [http://code.google.com/p/shadowdetection/wiki/PredictionPerformances Performances] (07/08/14)
     # Fixed issue with non OpenCL builds (07/08/14)
     # Uploaded model file (_see: [http://code.google.com/p/shadowdetection/wiki/ShadowDetection#SVM_Prediction SVM Predictions] for instructions_) (07/02/14)
-    # Ability to use svm prediction for more accurate results, see: [http://code.google.com/p/shadowdetection/wiki/WithSVM With SVM] (07/02/14)
+    # Ability to use svm prediction for more accurate results, see: [http://code.google.com/p/shadowdetection/wiki/Results Results] (07/02/14)
     # Parallelized svm prediction (on image level) with OpenCL (still not optimal )(07/01/14)
     # Removed some memory leaks (07/01/14)
     # Started using JAVA for external tools (07/01/14)
