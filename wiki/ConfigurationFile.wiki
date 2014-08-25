@@ -260,6 +260,26 @@ Configuration file is: ShadowDetectionConfig.xml and looks like this:
 
   "process.Prediction.usePrediction" specifies whether or not to use svm prediction in detection
 
+  "process.Prediction.predictionType" should be SVM or REG. Determines what kind of prediction to use regression based or based on support vector machine. Logistic regression based prediction is much faster, but support vector machine based is more accurate.
+
+  "process.Training.distribute0and1" tells to the make training files process whether or not to equally distribute 0s and 1s.
+
+  "process.Thresholds.shadow.lValue" specifies maximum lightness value for shadow pixel. If lightness value of candidate pixel is larger then specified in this property, pixel will not be declared as shadow pixel.
+
+  "process.Thresholds.shadow.useThresh" currently effects nothing.
+
+  "process.Thresholds.sky.rValue"
+  "process.Thresholds.sky.bValue"
+  "process.Thresholds.sky.lValue" are thresholds in sky detection process. Formula used is: 
+{{{
+if ((R <= rThresh || R <= B / 3U) && 
+    (G >= B / 6U) && 
+     G <= B && B >= bThresh && 
+     L >= lThresh)
+}}}
+  where R, G, B, L are channel values of current pixel, and rThresh, bThresh, lThresh are values specified in condiguration file. If pixel "passes this test" this doesn't mean that pixel will be treated as sky pixels, with this pass it only become candidate for sky pixel. Sky pixels can not be declared as shadow pixels.
+
+
   "settings.openCL.platformid" specifies platform index used in openCL processing
 
   "settings.openCL.deviceid" specifies device index of selected platform used in openCL processing
@@ -273,4 +293,4 @@ Configuration file is: ShadowDetectionConfig.xml and looks like this:
   "settings.svm.kernel_type" specifies kernel type used in creating model file (_see comment for more_)
 
 = Other Varibles =
-Explanation soon.
+  For all other properties variables please look at comments in configuration file
