@@ -7,7 +7,7 @@
   * [MakeYourModel#Get_regression_coefficients_with_R Get regression coefficients with R package]
   * [MakeYourModel#Finally Finally (read this first :) )]
 = Why? =
-  If you want to analyze only one type of digital images (for example some parking lot, only beaches, nature in maountains, images made from air of specified area, ...), then probably you want to have your own model. Ideal case will include that all images was/will be made with same camera on same location or similar enough locations  
+  If you want to analyze only one type of digital images (for example some parking lot, only beaches, nature in mauntains, images made from air of specified area, ...), then probably you want to have your own model. Ideal case will include that all images was/will be made with same camera on same location or similar enough locations  
 = First_steps =
   == Prepare training set ==
     * Choose images you want to use as training images and put them in one dir (for example imagesResized)
@@ -188,12 +188,12 @@ V13         -3.0928828  0.2058099 -15.028  < 2e-16 ***
       # you are done :)
   = Finally =    
     * When finish everything, don't forget to turn prediction on again, set adequate values to properties in configuration file, ...
-    * Do not use to many records in training process. 200K to 600K records should be enough. Better to use less quality records then more bad records. First you will not get better accuracy, you will prolong processing time both in training and prediction.
+    * Do not use to many records in training process. 200K to 600K records should be enough. Better to use less, but quality records, then more but bad records. First you will not get better accuracy and second you will prolong processing time both in training and prediction.
     * If you want to reduce number of records by removing every Nth pair of records call something like this (this will remove every second pair form pixelData.svm file):
 {{{
 java -jar ShadowDetectionTools/dist/ShadowDetectionTools.jar -removepairs 2 pixelData.svm pixelData_Reduced.svm
 }}}
     == How to recognize good data ==
       I can't give you answer because of two main reasons:
-      * I am not sure about that
+      * I am not sure about that :)
       * About things I know, I can't give brief answer, so research :)
