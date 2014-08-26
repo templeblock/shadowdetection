@@ -114,7 +114,7 @@
       * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/opencv_zpsb0a30251.png]
   == Java tools ==
-    * JDK 1.8 or above
+    * JDK 1.7 or above
     * ant and and-optional packages ver 1.9.3 or above. Project ant page: [http://ant.apache.org/]
 = Config =
 Please see: [http://code.google.com/p/shadowdetection/wiki/ConfigurationFile Configuration file]
