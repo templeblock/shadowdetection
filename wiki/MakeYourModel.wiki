@@ -154,6 +154,9 @@ glmPoisson <- glm(V1 ~., family = poisson(), data = myData)
 }}}
   * When you get summary of model you will get coefficients too, and info about them, something like this:
 {{{
+> summary(glmPoisson)
+}}}
+{{{
 Coefficients:
               Estimate Std. Error z value Pr(>|z|)    
 (Intercept) -0.2793042  0.0182126 -15.336  < 2e-16 ***
