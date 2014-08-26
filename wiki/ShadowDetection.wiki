@@ -204,6 +204,8 @@ sh.jpg	shadowsh1.jpg
     * More API interfaces which will allow to extend functionality.
     * General pixel categorisation framework (in version 1.0.0)
     * API documentation (in version 1.0.0)
+    * RTTI (in version 1.0.0)
+    * Smart pointers (in version 1.0.0)
   == Soon ==        
     * configure script (in version 1.0.0)
     * Improve accuracy with machine learning (in version 1.0.0)
