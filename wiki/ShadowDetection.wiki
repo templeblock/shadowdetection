@@ -207,6 +207,7 @@ sh.jpg	shadowsh1.jpg
   == Later ==   
     * Windows and Visual Studio support.
     * Return Mac OSX builds.
+    * Switch to general pixel categorisation framework.
 = Optimisation =
   For performances and explanantion of optimisation techniques please see: [http://code.google.com/p/shadowdetection/wiki/PredictionPerformances Prediction Performances]
 = Results =
