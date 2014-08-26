@@ -36,7 +36,7 @@
     # New tools in order to make new models (08/24/14)
     # First version of API/Framework for general pixel categorsation (08/24/14)
     # Abandoned Mac OSX support for now, because of issues with OpenCL (08/24/14)
-    # New model for SVM prediction (08/24/14)
+    # New model for SVM prediction (08/24/14) (_Please see: [ShadowDetection#SVM_Prediction SVM Prediction] for details_).
   * Version 0.2.0
     # Fixed issues with NU-SVR prediction (07/24/14)
     # For now paused with svm training process parallelization (07/24/14)
