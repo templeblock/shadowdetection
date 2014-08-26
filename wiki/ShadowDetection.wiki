@@ -30,7 +30,7 @@
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
   * Version 0.6.0
-    # Fixed issue with OpenCl initialisation in training process
+    # Fixed issue with OpenCl initialisation in training process (08/26/14)
     # New prediction based on logistic regression (08/24/14)
     # Fixed false detected shadow pixels on lightening areas (08/24/14)
     # Partially fixed false detected in sky areas (08/24/14)
