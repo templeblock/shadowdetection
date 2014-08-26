@@ -12,7 +12,7 @@
 }}}
   * Rebuild project configuration you use
 
-  I know that this is not good solution so soon it will be enabled some simple RTTI which will provide enabling of new class through configuration file.
+  I know that this is not good solution, so soon it will be enabled some simple RTTI which will provide enabling of new class through configuration file.
 
 = Explanation of IImageParameteres interface =
 Under construction
