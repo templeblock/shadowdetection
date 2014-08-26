@@ -1,7 +1,7 @@
 #summary How to make your own model
 
 = Content =
-  * [MakeYourModel#Why? Why I want to this]
+  * [MakeYourModel#Why? Why I want to do this]
   * [MakeYourModel#First_steps First steps]
   * [MakeYourModel#Build_SVM_model Build SVM model]
   * [MakeYourModel#Get_regression_coefficients_with_R Get regression coefficients with R package]
