@@ -113,12 +113,15 @@
         * AMD Catalyst drivers ver 14.10 or above     
       * OpenCV built with WITH_OPENCL turned ON
           [http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/opencv_zpsb0a30251.png]
+  == Java tools ==
+    ant and and-optional packages ver 1.9.3 or above
 = Config =
 Please see: [http://code.google.com/p/shadowdetection/wiki/ConfigurationFile Configuration file]
 = Usage =
   == Build ==
     === NetBeans IDE ===
       This is netbeans 8.0 project. If you are using this version or above just open it from File->Open Project. If required dependecies are not installed at default locations, you got to set adequate include and lib dirs in project properties.
+      For Java tools project open project located in root of base project with name ShadowDetectionTools. Treat it as any other Java project
     === Command line ===
       * Configurations are: Debug, Release, DebugOpenCL, ReleaseOpenCL, DebugOpenCL_AMD, ReleaseOpenCL_AMD.
         make usage:
@@ -132,6 +135,9 @@ Makefile Usage:"
 }}}
         OpenCL builds with no extension (DebugOpenCL and ReleaseOpenCL) are dedicated to NVIDIA platform
      * If required dependecies are not insatlled at default locations, you got to set adequate lib and include dirs in make files.
+      ==== Java tools ====
+        * Go to ShadowDetectionTools dir
+        * Build with ant (just type "ant" with no quotes)
   == Use instructions ==
     * After successful build you will have appropriate executables.
     * OpenCL executables are using openCL in processing, other not.
