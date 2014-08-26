@@ -1,5 +1,7 @@
 #summary Shadow detection on digital images.
 
+||[http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/camel_zps55f6bcba.jpg]||[http://i969.photobucket.com/albums/ae180/markodjurovic/shadowdetection/camelShadow_SVM_zpsc6e32273.jpg]||
+
 = Aditional info =
 
   * Project can be traced at: [http://www.ohloh.net/p/shadowdetection ohloh.net], thanks guys for this :).
