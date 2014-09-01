@@ -6,7 +6,7 @@ Configuration file is: ShadowDetectionConfig.xml and looks like this:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
 
-<QsConfig>
+<EFConfig>
     <process>
         <!-- true, false -->
         <UseBatch>
@@ -245,7 +245,8 @@ Configuration file is: ShadowDetectionConfig.xml and looks like this:
         </classes>
         
     </settings>
-</QsConfig>
+</EFConfig>
+
 }}}
 
 = Variables =
