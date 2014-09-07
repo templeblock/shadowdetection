@@ -10,9 +10,11 @@
 
   * *Project uses modified libsvm project: [http://www.csie.ntu.edu.tw/~cjlin/libsvm/], thanks to authors on this great and reliable library.*
 = Current version =
-  Current version is: 0.6.0
+  Current version is: 0.7.0
   
   About version 0.2.0 please see: [http://code.google.com/p/shadowdetection/wiki/Version020 ver0.2.0]
+  About version 0.6.0 please see: [https://code.google.com/p/shadowdetection/wiki/Version060 ver0.6.0]
+
 = Contents =
   * [ShadowDetection#News News]
   * [ShadowDetection#Requirements Requirements]
@@ -29,6 +31,14 @@
 = News =
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
+  * Version 0.7.0
+    # Switched to C++11
+    # Reorganized configuration file
+    # More possibilities to extend functionality
+    # Added memory tracking in debug mode
+    # Added RTTI
+    # Possibility to switch functionality to something other than shadow detection (by implementing new classes)
+    # Removed some memory leaks
   * Version 0.6.0
     # Changed root node of config file (09/01/14)
     # Fixed issue with OpenCl initialisation in training process (08/26/14)
@@ -200,20 +210,21 @@ sh.jpg	shadowsh1.jpg
     * ~~Add checks for start parameters~~
     * ~~Performance comparation charts (parallelized vs. non-parallelized)~~
     * ~~Improve shadow detection with new techniques~~
+    * ~~More API interfaces which will allow to extend functionality.~~
+    * ~~RTTI (in version 1.0.0)~~
+    * ~~Smart pointers (in version 1.0.0)~~
+    * ~~General pixel categorisation framework (in version 1.0.0)~~
   == Very soon ==    
     * Parallel "regression prediction"
-    * More API interfaces which will allow to extend functionality.
-    * General pixel categorisation framework (in version 1.0.0)
-    * API documentation (in version 1.0.0)
-    * RTTI (in version 1.0.0)
-    * Smart pointers (in version 1.0.0)
+    * How to (do something other than shadow detection) example        
+    * API documentation (in version 1.0.0)    
   == Soon ==        
     * configure script (in version 1.0.0)
-    * Improve accuracy with machine learning (in version 1.0.0)
+    * Switch project to "general pixel categorisation framework". (from version 1.0.0)
   == Later ==   
     * Windows and Visual Studio support.
-    * Return Mac OSX builds.
-    * Switch to general pixel categorisation framework.
+    * Return Mac OSX builds.    
+    * Improve accuracy with machine learning (in version 2.0.0)
 = Optimisation =
   For performances and explanantion of optimisation techniques please see: [http://code.google.com/p/shadowdetection/wiki/PredictionPerformances Prediction Performances]
 = Results =
