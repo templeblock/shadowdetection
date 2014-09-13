@@ -32,6 +32,7 @@
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
   * Version 0.7.0
+    # Updated documenation about config file: [ShadowDetection#Config Config] (09/13/14)
     # Parallelized regression pediction (09/13/14)
     # Changed ImageParameters interface (09/07/14)
     # Switched to C++11 (09/06/14)
