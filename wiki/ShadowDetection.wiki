@@ -40,6 +40,7 @@
     # More possibilities to extend functionality (09/06/14)
     # Added memory tracking in debug mode (09/06/14)
     # Added RTTI (09/06/14)
+    # Removed usage of deprecated collections (09/06/14)
     # Possibility to switch functionality to something other than shadow detection (by implementing new classes) (09/06/14)
     # Removed some memory leaks (09/06/14)
   * Version 0.6.0
@@ -101,7 +102,7 @@
      * libpng and dev  ( [http://www.libpng.org/pub/png/libpng.html libpng] )
      * OpenCV 2.4.9 or above (if openCV is installed with different prefix than /usr/local then must set adequate include and lib paths)
      * make
-     * gcc
+     * gcc version 4.4.8 or above
      * g++
      * libgomp (_for linux systems_)
      _Notice: Some libraries have them own requirements_
