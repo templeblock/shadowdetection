@@ -32,13 +32,15 @@
   * *Unfortunately no more access to Tesla card, so any help of providing testing on Tesla cards will be great.*
   * Mac OSX builds abandoned for now.
   * Version 0.7.0
-    # Switched to C++11
-    # Reorganized configuration file
-    # More possibilities to extend functionality
-    # Added memory tracking in debug mode
-    # Added RTTI
-    # Possibility to switch functionality to something other than shadow detection (by implementing new classes)
-    # Removed some memory leaks
+    # Parallelized regression pediction (09/13/14)
+    # Changed ImageParameters interface (09/07/14)
+    # Switched to C++11 (09/06/14)
+    # Reorganized configuration file (09/06/14)
+    # More possibilities to extend functionality (09/06/14)
+    # Added memory tracking in debug mode (09/06/14)
+    # Added RTTI (09/06/14)
+    # Possibility to switch functionality to something other than shadow detection (by implementing new classes) (09/06/14)
+    # Removed some memory leaks (09/06/14)
   * Version 0.6.0
     # Changed root node of config file (09/01/14)
     # Fixed issue with OpenCl initialisation in training process (08/26/14)
