@@ -218,8 +218,8 @@ sh.jpg	shadowsh1.jpg
     * ~~RTTI (in version 1.0.0)~~
     * ~~Smart pointers (in version 1.0.0)~~
     * ~~General pixel categorisation framework (in version 1.0.0)~~
-  == Very soon ==    
-    * Parallel "regression prediction"
+    * ~~Parallel "regression prediction"~~
+  == Very soon ==        
     * How to (do something other than shadow detection) example        
     * API documentation (in version 1.0.0)    
   == Soon ==        
